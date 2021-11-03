@@ -1,0 +1,22 @@
+.container-toform{
+    background-image: url(../../multimedia/img/los-50-paisajes-maravillosos-del-mundo-para-tomar-fotos-1280x720.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @apply tw-flex tw-items-center tw-justify-center
+}
+.form-toform{
+    @apply tw-w-5/12 tw-box-border tw-p-3 tw-rounded;
+    @apply tw-flex tw-flex-row tw-items-center tw-justify-center;
+    background-color: rgba(128, 128, 128, 0.473)
+}
+.component-of-toform{
+    @apply tw-w-full;
+    @apply tw-flex tw-flex-row tw-items-center tw-justify-center tw-bg-blue
+}
+.component-of-toform input{
+    @apply tw-w-11/12 tw-box-border tw-p-1 tw-outline-none;
+}
+.btn-toform{
+    @apply tw-bg-red tw-text-white tw-p-1;
+}

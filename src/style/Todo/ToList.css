@@ -1,0 +1,4 @@
+.container-tolist{
+    @apply tw-w-full tw-h-full tw-flex  tw-items-center tw-flex-col;
+    @apply tw-overflow-y-auto 
+}

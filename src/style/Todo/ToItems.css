@@ -1,0 +1,17 @@
+.unfilled{
+    @apply tw-flex;
+    background-color: #9D9D9D
+}
+.full{
+    @apply tw-flex tw-bg-gray_secundary;
+}
+.title-task{
+    @apply tw-w-11/12 tw-box-border
+}
+.btn-completed{
+    @apply tw-w-1/12
+}
+.container-toitems{
+    @apply tw-w-11/12 tw-box-border tw-my-2 tw-p-3;
+    @apply tw-rounded
+}
