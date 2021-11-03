@@ -9,22 +9,25 @@ import { helpHttp } from '../helper/helpHttp';
 import ToList from '../components/ToList';
 import Err from '../components/Err';
 import Loader from '../components/Loader';
-
-import '../style/views/Todo.css'
 import ToForm from './../components/ToForm';
+
+// estilso del componente Todo
+import '../style/views/Todo.css'
 
 const Todo = ({filterTask}) => {
 
-    const [task, setTask] = useState([]);
-    const [taskRende, setTaskRende] = useState(task)
-    const [err, setErr] = useState(null);
-    const [loading, setLoading] = useState(false)
-    const [idTask, setIdTask] = useState(0)
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(20);
+    const [task, setTask] = useState([]); // guarda la lista de tarea para no perder ningun dato ()
+    const [taskRende, setTaskRende] = useState(task) // aqui van estar la lista(las tareas) que se van a mostrar(rende)
+    const [err, setErr] = useState(null); // aqui guarda si hay un error en las peticiones
+    const [loading, setLoading] = useState(false) // hace loading hasta que la peticion acabe
+    const [idTask, setIdTask] = useState(0) // aqui guarda el id mas alto para despues asignarselo a un nuevo task
+    // const [currentPage, setCurrentPage] = useState(1); // sin uso por el momento
+    const [postsPerPage] = useState(20); // la cantidad de cuantos task va tener una paginacion
 
     const url = 'https://jsonplaceholder.typicode.com/todos'
 
+    // GET
+    // obtenemos todos los task de la api
     useEffect(() => {
       
      const api = helpHttp()
@@ -46,6 +49,7 @@ const Todo = ({filterTask}) => {
      
     },[url])
 
+    // filtro de task
     useEffect(() => {
 
       if(filterTask != null) {
@@ -57,6 +61,8 @@ const Todo = ({filterTask}) => {
 
     },[filterTask,task])
 
+    // POST
+    // creacion de un nuevo task
     const createNewTask = (newTask) => {
 
       const api = helpHttp()
@@ -81,6 +87,8 @@ const Todo = ({filterTask}) => {
 
     }
 
+    // PUT
+    // actualizamos el estado del task
     const updateCompleted = (id, taskUpdate) => {
       taskUpdate.completed = !taskUpdate.completed
       console.log(taskUpdate)
@@ -101,6 +109,8 @@ const Todo = ({filterTask}) => {
       })
     }
 
+    // DEL
+    // Eliminamos un task
     const deletTask = idTask => {
 
       const api = helpHttp()
@@ -110,14 +120,15 @@ const Todo = ({filterTask}) => {
         if(response.err){
           setErr(response)
         }else{
-          const newTask = task.filter(task => task.id !== idTask)
-          setTask(newTask) 
+            const newTask = task.filter(task => task.id !== idTask) 
+            setTask(newTask) 
         }
       })
 
     }
 
-    const indexOfLastPost = currentPage * postsPerPage;
+    // paginacion
+    const indexOfLastPost = 1 * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentTask = taskRende.slice(indexOfFirstPost, indexOfLastPost);
 

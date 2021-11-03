@@ -1,9 +1,11 @@
 .unfilled{
     @apply tw-flex;
-    background-color: #9D9D9D
+    background-color: #9D9D9D;
+    transition: all 0.4s;
 }
 .full{
-    @apply tw-flex tw-bg-gray_secundary tw-line-through;
+    @apply tw-flex tw-bg-gray_secundary tw-line-through tw-transition-all;
+    transition: all 0.4s;
 }
 .title-task{
     @apply tw-w-11/12 tw-box-border
@@ -17,9 +19,12 @@
 .btn-delet-task:hover{
     border-color: rgba(0, 0, 255, 0.555);
 }
-
 .container-toitems{
-    @apply tw-w-11/12 tw-box-border tw-my-2 tw-p-2 tw-items-center;
+    @apply tw-w-11/12 tw-box-border tw-my-2 tw-p-2 tw-items-center tw-relative;
     @apply tw-rounded tw-cursor-pointer;
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    transition: 0.3s;
 }
+/* .container-toitems:focus-within{
+    transform: translateX(-1000px);
+} */

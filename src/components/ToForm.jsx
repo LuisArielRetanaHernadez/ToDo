@@ -12,7 +12,7 @@ const formInitin = {
 
 const ToForm = ({createNewTask}) => {
 
-    const [form, setForm] = useState(formInitin)
+    const [form, setForm] = useState(formInitin) //guardamos los datos del form
 
     const heandlChangue = e => {
         setForm({

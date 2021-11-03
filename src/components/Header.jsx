@@ -1,17 +1,7 @@
-
-// hooks react
-// import { useState } from 'react';
-
-// style del componente Header
+// estilso del componente Header
 import '../style/Header.css'
-// import { useEffect } from 'react';
 
 const Header = ({filterByTasks}) => {
-    // const [filterTask, setFilterTask] = useState(null)
-
-    // useEffect(() => {
-    //     filterByTasks(filterTask)
-    // },[filterTask])
 
     return (
         <div className='container-header'>
