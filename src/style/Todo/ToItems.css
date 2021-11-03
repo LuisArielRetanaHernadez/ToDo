@@ -9,7 +9,7 @@
     @apply tw-w-11/12 tw-box-border
 }
 .btn-delet-task{
-  @apply tw-p-1 tw-font-medium;
+  @apply tw-p-1 tw-font-medium tw-relative;
   border: 2px solid transparent;
   border-radius: 5px;
   transition: all 0.4s;
@@ -17,6 +17,7 @@
 .btn-delet-task:hover{
     border-color: rgba(0, 0, 255, 0.555);
 }
+
 .container-toitems{
     @apply tw-w-11/12 tw-box-border tw-my-2 tw-p-2 tw-items-center;
     @apply tw-rounded tw-cursor-pointer;

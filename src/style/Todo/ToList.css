@@ -2,3 +2,14 @@
     @apply tw-w-full tw-h-full tw-flex  tw-items-center tw-flex-col;
     @apply tw-overflow-y-auto 
 }
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-track{
+    @apply tw-bg-white tw-rounded
+}
+::-webkit-scrollbar-thumb{
+    @apply tw-rounded;
+    background-color: #99A799;    
+    border: 1px solid white;
+}

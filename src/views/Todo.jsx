@@ -20,6 +20,9 @@ const Todo = ({filterTask}) => {
     const [err, setErr] = useState(null);
     const [loading, setLoading] = useState(false)
     const [idTask, setIdTask] = useState(0)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(20);
+
     const url = 'https://jsonplaceholder.typicode.com/todos'
 
     useEffect(() => {
@@ -114,12 +117,16 @@ const Todo = ({filterTask}) => {
 
     }
 
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentTask = taskRende.slice(indexOfFirstPost, indexOfLastPost);
+
     return (
       <div className='tw-box-border tw-w-9/12 tw-h-screen'>
       <ToForm createNewTask={createNewTask} />
        <div className='container-todo'>
           {loading && <Loader />}
-          {task.length >= 0 && <ToList task={taskRende} updateCompleted={updateCompleted} deletTask={deletTask} />}
+          {task.length >= 0 && <ToList task={currentTask} updateCompleted={updateCompleted} deletTask={deletTask} />}
           {err && <Err messaga={err.messaga} code={err.err}/>}
        </div> 
       </div>

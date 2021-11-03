@@ -11,6 +11,7 @@ module.exports = {
       blue: '#2874A6',
       black: '#000000',
       gray_secundary: '#EFEFEF',
+      gray: '#99A799'
     },
     extend: {
       transitionProperty: {
