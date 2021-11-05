@@ -19,7 +19,7 @@ const Todo = ({filterTask}) => {
     const [task, setTask] = useState([]); // guarda la lista de tarea para no perder ningun dato ()
     const [taskRende, setTaskRende] = useState(task) // aqui van estar la lista(las tareas) que se van a mostrar(rende)
     const [err, setErr] = useState(null); // aqui guarda si hay un error en las peticiones
-    const [loading, setLoading] = useState(false) // hace loading hasta que la peticion acabe
+    const [loading, setLoading] = useState(true) // hace loading hasta que la peticion acabe
     const [idTask, setIdTask] = useState(0) // aqui guarda el id mas alto para despues asignarselo a un nuevo task
     // const [currentPage, setCurrentPage] = useState(1); // sin uso por el momento
     const [postsPerPage] = useState(20); // la cantidad de cuantos task va tener una paginacion
@@ -135,9 +135,9 @@ const Todo = ({filterTask}) => {
     return (
       <div className='tw-box-border tw-w-9/12 tw-h-screen'>
       <ToForm createNewTask={createNewTask} />
-       <div className='container-todo'>
+       <div className={`container-todo`}>
           {loading && <Loader />}
-          {task.length >= 0 && <ToList task={currentTask} updateCompleted={updateCompleted} deletTask={deletTask} />}
+          {!loading && task.length >= 0 && <ToList task={currentTask} updateCompleted={updateCompleted} deletTask={deletTask} />}
           {err && <Err messaga={err.messaga} code={err.err}/>}
        </div> 
       </div>

@@ -1,4 +1,4 @@
 .container-todo{
     @apply tw-w-full tw-h-3/5 tw-overflow-hidden tw-bg-white;
-    @apply tw-items-center tw-justify-center
+    @apply tw-items-center tw-justify-center;
 }

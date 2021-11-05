@@ -1,10 +1,11 @@
 
+// estilos del componente Loader
+import '../style/Loader.css'
+
 const Loader = () => {
 
     return (
-        <div>
-            <h2>cargando</h2>
-        </div>
+        <div class="spinner"></div>
     )
 }
 
